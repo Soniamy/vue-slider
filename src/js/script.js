@@ -32,4 +32,20 @@ createApp({
       ],
     };
   },
+  methods: {
+    nextBtn() {
+      if (this.currentSlide >= this.slides.length - 1) {
+        this.currentSlide = 0;
+      } else {
+        this.currentSlide++;
+      }
+    },
+    prevBtn() {
+      if (this.currentSlide > 0) {
+        this.currentSlide--;
+      } else {
+        this.currentSlide = this.slides.length - 1;
+      }
+    },
+  },
 }).mount('#app');
