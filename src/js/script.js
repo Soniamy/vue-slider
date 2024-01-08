@@ -47,5 +47,9 @@ createApp({
         this.currentSlide = this.slides.length - 1;
       }
     },
+    //PRIMO BONUS//
+    goNumber(index) {
+      this.currentSlide = index;
+    },
   },
 }).mount('#app');
