@@ -3,6 +3,7 @@ createApp({
   data() {
     return {
       currentSlide: 0,
+      autoplayID: null,
       slides: [
         {
           image: 'img/01.webp',
@@ -50,6 +51,15 @@ createApp({
     //PRIMO BONUS//
     goNumber(index) {
       this.currentSlide = index;
+    },
+    //SECONDO E TERZO BONUS//
+    startAutoplay: function () {
+      this.autoplayID = setInterval(this.nextBtn, 2000);
+    },
+    stopAutoplay: function () {
+      if (this.autoplayID != null) {
+        clearInterval(this.autoplayID);
+      }
     },
   },
 }).mount('#app');
